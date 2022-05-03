@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30f11189d77f564caf53b4a8b06c3d9, type: 3}
-  m_Name: Burn
+  m_Script: {fileID: 11500000, guid: 809ca7741b8d91544a6d448c5254a0e9, type: 3}
+  m_Name: Energetically
   m_EditorClassIdentifier: 
-  prefab: {fileID: 666570338522315561, guid: 67013754067b160438369390a2a63479, type: 3}
-  type: 0
-  description: Burn - Burns Objecs
-  verbColour: Red
+  prefab: {fileID: 1622080886866851836, guid: d58cab15bceb0334081941016008b7c0, type: 3}
+  type: 3
+  description: Energetically - With extra force
+  verbColour: AdVerb
   verbName: 
-  verbWeigt: 1
+  verbWeigt: 2

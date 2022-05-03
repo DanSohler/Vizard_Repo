@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3522664745424267882
+--- !u!1001 &2288650805014236373
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 666570338522315561, guid: 67013754067b160438369390a2a63479, type: 3}
       propertyPath: m_Name
-      value: GreenItem
+      value: AdverbItem
       objectReference: {fileID: 0}
     - target: {fileID: 666570338522315562, guid: 67013754067b160438369390a2a63479, type: 3}
       propertyPath: m_Pivot.x
@@ -97,15 +97,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 666570338522315563, guid: 67013754067b160438369390a2a63479, type: 3}
       propertyPath: m_Color.b
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 666570338522315563, guid: 67013754067b160438369390a2a63479, type: 3}
-      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 666570338522315563, guid: 67013754067b160438369390a2a63479, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5330188
+      objectReference: {fileID: 0}
+    - target: {fileID: 666570338522315563, guid: 67013754067b160438369390a2a63479, type: 3}
       propertyPath: m_Color.r
-      value: 0.53333336
+      value: 0.5719396
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67013754067b160438369390a2a63479, type: 3}

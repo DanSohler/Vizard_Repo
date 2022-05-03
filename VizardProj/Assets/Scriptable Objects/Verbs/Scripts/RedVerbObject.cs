@@ -5,7 +5,7 @@ using UnityEngine;
 public class RedVerbObject : VerbObject
 {
     public string verbColour = "Red";
-    public string verbName;
+    [HideInInspector] public string verbName;
     // Used for math later with comparing verbs
     public int verbWeigt;
     private RedVerbObject self;
