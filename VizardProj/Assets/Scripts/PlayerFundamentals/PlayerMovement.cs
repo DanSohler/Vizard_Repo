@@ -7,14 +7,19 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     [SerializeField] private float speedMultiplier;
+    public float groundDrag;
     public Transform orientation;
+
+    // Input tracking vars
     float horizonalInput;
     float verticalInput;
 
-    public float groundDrag;
-
     Vector3 moveDirection;
     Rigidbody rb;
+
+    [Header("Verb Storage")]
+    //Verb Inventory details
+    public InventoryObject verbInventory;
 
     private void Start()
     {
@@ -29,6 +34,24 @@ public class PlayerMovement : MonoBehaviour
 
         rb.drag = groundDrag;
     }
+
+    //Checks for colliding with verb objects, adds to inventory
+    public void OnTriggerEnter(Collider other)
+    {
+        var verb = other.GetComponent<Verb>();
+
+        if (verb)
+        {
+            verbInventory.AddItem(verb.verb, 1);
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        verbInventory.Container.Clear();
+    }
+
     private void FixedUpdate()
     {
         MovePlayer();
