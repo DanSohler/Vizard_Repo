@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7583774512244088666, guid: b357083eaffe1cb47b6194d98291845f, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583774512244088666, guid: b357083eaffe1cb47b6194d98291845f, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 7583774513729481104, guid: b357083eaffe1cb47b6194d98291845f, type: 3}
       propertyPath: m_Name
       value: RedItem
