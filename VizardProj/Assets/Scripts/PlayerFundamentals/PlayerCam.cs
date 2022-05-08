@@ -12,8 +12,12 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    menuState currentState;
+    bool stateRotator = true;
+
     private void Start()
     {
+        currentState = menuState.menuDisabled;
         // locks cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -24,7 +28,6 @@ public class PlayerCam : MonoBehaviour
         // gets mouse input
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
-        
 
         yRotation += mouseX;
 
@@ -34,5 +37,39 @@ public class PlayerCam : MonoBehaviour
         // rotate cam and orientation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        if (Input.GetKeyDown("space"))
+        {
+            stateRotator = !stateRotator;
+            if (stateRotator)
+            {
+                currentState = menuState.menuEnabled;
+            }
+            if (!stateRotator)
+            {
+                currentState = menuState.menuDisabled;
+            }
+        }
+
+        //sets menu state
+        OnAnimatorMove();
+    }
+
+    private void OnAnimatorMove()
+    {
+        if (currentState == menuState.menuEnabled)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+        if (currentState == menuState.menuDisabled)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+    public enum menuState
+    {
+      menuEnabled,
+      menuDisabled
     }
 }
