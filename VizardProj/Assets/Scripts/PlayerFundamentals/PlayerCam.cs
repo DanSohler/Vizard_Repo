@@ -15,6 +15,9 @@ public class PlayerCam : MonoBehaviour
     public menuState currentState;
     [HideInInspector] public bool stateRotator = true;
 
+    //Holds all slots
+    public List<GameObject> slotList;
+
     private void Start()
     {
         currentState = menuState.menuDisabled;
@@ -48,10 +51,12 @@ public class PlayerCam : MonoBehaviour
             if (stateRotator)
             {
                 currentState = menuState.menuEnabled;
+                SlotManage();
             }
             if (!stateRotator)
             {
                 currentState = menuState.menuDisabled;
+                SlotManage();
             }
         }
 
@@ -72,6 +77,25 @@ public class PlayerCam : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
+    private void SlotManage()
+    {
+        if (currentState == menuState.menuEnabled)
+        {
+            foreach (var obj in slotList)
+            {
+                obj.SetActive(true);
+            }
+        }
+        if (currentState == menuState.menuDisabled)
+        {
+            foreach (var obj in slotList)
+            {
+                obj.SetActive(false);
+            }
+        }
+    }
+
     public enum menuState
     {
       menuEnabled,

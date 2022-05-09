@@ -7,6 +7,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 {
     ItemSlot Instance;
 
+    private bool isHousingVerb = false;
+
     private Canvas canvas;
 
     private void Awake()
@@ -21,8 +23,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         Debug.Log("Drop");
         if (eventData.pointerDrag != null)
         {
-            var t = eventData.pointerDrag.transform;
-            t.SetParent(Instance.gameObject.transform);
+            if (!isHousingVerb)
+            {
+                var t = eventData.pointerDrag.transform;
+                t.SetParent(Instance.gameObject.transform);
+                isHousingVerb = true;
+            }
+            
             //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition / canvas.scaleFactor;
         }
 
