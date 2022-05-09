@@ -12,8 +12,8 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    menuState currentState;
-    bool stateRotator = true;
+    public menuState currentState;
+    [HideInInspector] public bool stateRotator = true;
 
     private void Start()
     {
@@ -25,20 +25,25 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        // gets mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        if (currentState == menuState.menuDisabled)
+        {
+            // gets mouse input
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        yRotation += mouseX;
+            yRotation += mouseX;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, 0f, 0f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, 0f, 0f);
 
-        // rotate cam and orientation
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+            // rotate cam and orientation
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+
         if (Input.GetKeyDown("space"))
         {
+            //flips bool to opposite of current state
             stateRotator = !stateRotator;
             if (stateRotator)
             {

@@ -17,6 +17,16 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
     Rigidbody rb;
 
+    //ref for enabling movement
+    public PlayerCam camScript;
+
+
+    private void Awake()
+    {
+        camScript = FindObjectOfType<PlayerCam>();
+
+    }
+
     [Header("Verb Storage")]
     //Verb Inventory details
     public InventoryObject verbInventory;
@@ -25,12 +35,23 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        Time.timeScale = 1;
     }
 
     private void Update()
     {
-        MyInput();
-        SpeedControl();
+
+        if (camScript.currentState == PlayerCam.menuState.menuDisabled)
+        {
+            MyInput();
+            SpeedControl();
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+
 
         rb.drag = groundDrag;
     }
