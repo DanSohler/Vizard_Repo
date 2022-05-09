@@ -18,6 +18,9 @@ public class PlayerCam : MonoBehaviour
     //Holds all slots
     public List<GameObject> slotList;
 
+    //refs drag-drop
+    public DragDrop dragScript;
+
     private void Start()
     {
         currentState = menuState.menuDisabled;
@@ -91,14 +94,15 @@ public class PlayerCam : MonoBehaviour
         {
             foreach (var obj in slotList)
             {
+                dragScript.ResetVerbObjPosition();
                 obj.SetActive(false);
             }
         }
     }
+}
 
-    public enum menuState
-    {
-      menuEnabled,
-      menuDisabled
-    }
+public enum menuState
+{
+    menuEnabled,
+    menuDisabled
 }

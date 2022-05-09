@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        if (camScript.currentState == PlayerCam.menuState.menuDisabled)
+        if (camScript.currentState == menuState.menuDisabled)
         {
             MyInput();
             SpeedControl();
@@ -51,8 +51,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-
-
         rb.drag = groundDrag;
     }
 

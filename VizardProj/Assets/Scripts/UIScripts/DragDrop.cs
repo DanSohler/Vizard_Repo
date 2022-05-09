@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IInitializePotentialDragHandler, IDragHandler
 {
+    //stores obj for reset
+    GameObject grabbedObj;
+    GameObject originInvParent;
+
+    menuState currenState;
 
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
-    private RectTransform originPoint;
-
+    private Vector2 dragOriginPoint;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = FindObjectOfType<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
-        originPoint = GetComponent<RectTransform>();
 
-        originPoint = GetComponent<RectTransform>();
+        originInvParent = GameObject.FindWithTag("Inventory");
     }
 
     #region Mouse Logic
@@ -28,9 +31,16 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     //Called when we begin dragging
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("StartDrag");
+        
+        grabbedObj = eventData.pointerCurrentRaycast.gameObject;
+        dragOriginPoint = rectTransform.anchoredPosition;
         canvasGroup.alpha = 0.5f;
         canvasGroup.blocksRaycasts = false;
+    }
+
+    public void OnInitializePotentialDrag(PointerEventData eventData)
+    {
+        eventData.useDragThreshold = false;
     }
 
     //Called when we drag
@@ -42,19 +52,20 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     //Called wgeb we end dragging
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("EndDrag");
+        
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts = true;
-        rectTransform.anchoredPosition = originPoint.anchoredPosition;
+        rectTransform.anchoredPosition = dragOriginPoint;
     }
 
     //Call when we click down
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        
+    public void OnPointerDown(PointerEventData eventData) {
     }
 
-    
-
     #endregion
+
+    public void ResetVerbObjPosition()
+    {
+        grabbedObj.transform.SetParent(originInvParent.transform);
+    }
 }

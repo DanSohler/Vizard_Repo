@@ -115,6 +115,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.53333336
       objectReference: {fileID: 0}
+    - target: {fileID: 5755725277436412117, guid: 67013754067b160438369390a2a63479, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755725277436412117, guid: 67013754067b160438369390a2a63479, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6824295959148101169, guid: 67013754067b160438369390a2a63479, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 67013754067b160438369390a2a63479, type: 3}

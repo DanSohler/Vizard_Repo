@@ -7,20 +7,17 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 {
     ItemSlot Instance;
 
-    private bool isHousingVerb = false;
-
-    private Canvas canvas;
+    public bool isHousingVerb = false;
 
     private void Awake()
     {
-        canvas = FindObjectOfType<Canvas>();
         Instance = this;
     }
 
     //Call when we drop the item
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("Drop");
+        
         if (eventData.pointerDrag != null)
         {
             if (!isHousingVerb)
