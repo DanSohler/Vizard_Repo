@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 666570338522315561, guid: 67013754067b160438369390a2a63479, type: 3}
   type: 0
-  description: Burn - Burns Objecs
   verbColour: Red
-  verbName: 
-  verbWeigt: 1
+  description: Burn - Burns Objecs
+  verbWeigt: 6
+  verbName: Burn

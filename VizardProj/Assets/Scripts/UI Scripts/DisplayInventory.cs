@@ -36,20 +36,16 @@ public class DisplayInventory : MonoBehaviour
         {
            if (verbsDisplayed.ContainsKey(inventory.Container[i]))
             {
-                //marked out since Numbers aren't needed
-                //verbsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             }
            else
             {
                 var obj = Instantiate(inventory.Container[i].verb.prefab, Vector3.zero, Quaternion.identity, transform);
+                //fills the collected obj with details from the prefab it spawned from
+                obj.GetComponent<VerbStats>().SetVerbStats(inventory.Container[i].verb.name, inventory.Container[i].verb.verbColour, inventory.Container[i].verb.verbWeigt);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition();
-                //marked out since Numbers aren't needed
-                //obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                 verbsDisplayed.Add(inventory.Container[i], obj);
             }
-
         }
-
     }
     public Vector3 GetPosition()
     {

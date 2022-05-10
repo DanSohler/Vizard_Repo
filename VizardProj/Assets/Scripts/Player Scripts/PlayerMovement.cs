@@ -20,16 +20,16 @@ public class PlayerMovement : MonoBehaviour
     //ref for enabling movement
     public PlayerCam camScript;
 
+    [Header("Verb Storage")]
+    //Verb Inventory details
+    public InventoryObject verbInventory;
+
 
     private void Awake()
     {
         camScript = FindObjectOfType<PlayerCam>();
 
     }
-
-    [Header("Verb Storage")]
-    //Verb Inventory details
-    public InventoryObject verbInventory;
 
     private void Start()
     {
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
+        //Updates scripts when state changes
         if (camScript.currentState == menuState.menuDisabled)
         {
             MyInput();
@@ -61,27 +61,28 @@ public class PlayerMovement : MonoBehaviour
 
         if (verb)
         {
-            verbInventory.AddItem(verb.verb, 1);
+            verbInventory.AddItem(verb.verbScriptableObj, 1);
             Destroy(other.gameObject);
         }
     }
 
     private void OnApplicationQuit()
     {
+        //ensures verbInventory is absolutely cleared.
         verbInventory.Container.Clear();
     }
 
     private void FixedUpdate()
     {
+        //moves player every frame
         MovePlayer();
     }
 
     void MyInput()
     {
+        //sets inputs
         horizonalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
-
     }
 
     private void MovePlayer()
@@ -93,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SpeedControl()
     {
+        //calculates move values
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         // limit velocity

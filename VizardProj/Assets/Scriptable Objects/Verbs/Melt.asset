@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4153206011871695171, guid: 707891cb732e146479c1bd601e84e500, type: 3}
   type: 2
-  description: Melt - Melts Objects
   verbColour: Green
-  verbName: 
-  verbWeigt: 1
+  description: Melt - Melts Objects
+  verbWeigt: 10
+  verbName: Melt

@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.53333336
       objectReference: {fileID: 0}
+    - target: {fileID: 3617945774372746623, guid: 67013754067b160438369390a2a63479, type: 3}
+      propertyPath: verbColour
+      value: Green
+      objectReference: {fileID: 0}
     - target: {fileID: 5755725277436412117, guid: 67013754067b160438369390a2a63479, type: 3}
       propertyPath: m_Interactable
       value: 1

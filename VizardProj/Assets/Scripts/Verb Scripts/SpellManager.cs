@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Verb : MonoBehaviour
+public class SpellManager : MonoBehaviour
 {
-    public VerbObject verbScriptableObj;
-
+    
 }

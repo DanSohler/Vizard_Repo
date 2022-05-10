@@ -115,5 +115,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5719396
       objectReference: {fileID: 0}
+    - target: {fileID: 3617945774372746623, guid: 67013754067b160438369390a2a63479, type: 3}
+      propertyPath: verbColour
+      value: Adverb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67013754067b160438369390a2a63479, type: 3}

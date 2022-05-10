@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -38,11 +39,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 var t = eventData.pointerDrag.transform;
                 t.SetParent(Instance.gameObject.transform);
             }
-            else
-            {
-                Debug.Log("Slot is occupied");
-            }
             
+
             //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition / canvas.scaleFactor;
         }
 
