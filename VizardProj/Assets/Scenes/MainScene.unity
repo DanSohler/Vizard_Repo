@@ -2066,6 +2066,19 @@ MonoBehaviour:
   - {fileID: 1169874210}
   - {fileID: 97913378}
   invScreen: {fileID: 1460861241}
+  verbSlotNames:
+  - 
+  - 
+  - 
+  - 
+  - 
+  verbSlotColours:
+  - 
+  - 
+  - 
+  - 
+  - 
+  verbSlotWeights: 0000000000000000000000000000000000000000
 --- !u!1 &2126360912
 GameObject:
   m_ObjectHideFlags: 0

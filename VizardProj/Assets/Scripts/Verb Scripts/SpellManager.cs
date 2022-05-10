@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class SpellManager : MonoBehaviour
 {
-    public List<GameObject> slotArray;
+    public SlotManager slotManScript;
 
-    private void Update()
+    private void Awake()
     {
-
-
+        slotManScript = GetComponent<SlotManager>();
     }
 
-    public void GrabSlotValues()
-    {
+    //Script should contain the verb recepies needed for executing verb spells
 
-    }
 }
