@@ -258,12 +258,12 @@ GameObject:
   - component: {fileID: 97913382}
   - component: {fileID: 97913383}
   m_Layer: 5
-  m_Name: Slot 5
+  m_Name: Slot 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &97913379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be4f39ded23f414c9a2336bf15b638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 97913378}
   isHousingVerb: 0
 --- !u!1 &109543066
 GameObject:
@@ -624,7 +625,6 @@ MonoBehaviour:
   - {fileID: 977842103}
   - {fileID: 1169874210}
   - {fileID: 97913378}
-  dragScript: {fileID: 0}
 --- !u!1 &163389985
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,12 +861,12 @@ GameObject:
   - component: {fileID: 472513038}
   - component: {fileID: 472513039}
   m_Layer: 5
-  m_Name: Slot 2
+  m_Name: Slot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &472513035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -960,6 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be4f39ded23f414c9a2336bf15b638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 472513034}
   isHousingVerb: 0
 --- !u!1 &705496931
 GameObject:
@@ -1421,7 +1422,7 @@ GameObject:
   - component: {fileID: 977842107}
   - component: {fileID: 977842108}
   m_Layer: 5
-  m_Name: Slot 3
+  m_Name: Slot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1520,6 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be4f39ded23f414c9a2336bf15b638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 977842103}
   isHousingVerb: 0
 --- !u!1 &1037832510
 GameObject:
@@ -1535,12 +1537,12 @@ GameObject:
   - component: {fileID: 1037832514}
   - component: {fileID: 1037832515}
   m_Layer: 5
-  m_Name: Slot 1
+  m_Name: 'Slot '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1037832511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1634,6 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be4f39ded23f414c9a2336bf15b638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 1037832510}
   isHousingVerb: 0
 --- !u!1 &1165304449
 GameObject:
@@ -1733,12 +1736,12 @@ GameObject:
   - component: {fileID: 1169874214}
   - component: {fileID: 1169874215}
   m_Layer: 5
-  m_Name: Slot 4
+  m_Name: Slot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1169874211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1832,6 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be4f39ded23f414c9a2336bf15b638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 1169874210}
   isHousingVerb: 0
 --- !u!1 &1460861241
 GameObject:
@@ -1990,6 +1994,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a249a95eb97eb54ba1fa7c5cfee9010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotList:
+  - {fileID: 1037832510}
+  - {fileID: 472513034}
+  - {fileID: 977842103}
+  - {fileID: 1169874210}
+  - {fileID: 97913378}
+  invScreen: {fileID: 1460861241}
 --- !u!1 &2126360912
 GameObject:
   m_ObjectHideFlags: 0

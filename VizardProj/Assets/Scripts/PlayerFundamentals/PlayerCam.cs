@@ -18,6 +18,9 @@ public class PlayerCam : MonoBehaviour
     //Holds all slots
     public List<GameObject> slotList;
 
+    //references slot manager
+    SlotManager slotManager;
+
 
     private void Start()
     {
@@ -25,6 +28,8 @@ public class PlayerCam : MonoBehaviour
         // locks cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        slotManager = FindObjectOfType<SlotManager>();
     }
 
     private void Update()
@@ -92,7 +97,7 @@ public class PlayerCam : MonoBehaviour
         {
             foreach (var obj in slotList)
             {
-                //dragScript.ResetVerbObjPosition();
+                slotManager.resetSlots();
                 obj.SetActive(false);
             }
         }

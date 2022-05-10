@@ -52,7 +52,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     //Called wgeb we end dragging
     public void OnEndDrag(PointerEventData eventData)
     {
-        
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts = true;
         rectTransform.anchoredPosition = dragOriginPoint;
