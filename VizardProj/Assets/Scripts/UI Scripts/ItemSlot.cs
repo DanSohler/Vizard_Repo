@@ -25,12 +25,12 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     public void Update()
     {
+        //checks if parent gameobj has any children
         if (self.transform.childCount > 0 )
         {
             var grabbed = self.transform.GetChild(0);
             isHousingVerb = true;
             GrabChildVars(grabbed.GetComponent<VerbStats>().verbName, grabbed.GetComponent<VerbStats>().verbColour, grabbed.GetComponent<VerbStats>().verbWeight);
-            //Debug.Log("Childs name is " + grabbed);
         }
         else
         {
@@ -39,6 +39,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         }
     }
 
+    //Grabs child vars for reading later
     public void GrabChildVars(string name, string colour, int weight)
     {
         slotVerbName = name;
@@ -46,6 +47,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         slotVerbWeight = weight;
     }
 
+    //Resets vars so when the slot is empty, it won't give false values
     public void ResetChildVars()
     {
         slotVerbName = null;
