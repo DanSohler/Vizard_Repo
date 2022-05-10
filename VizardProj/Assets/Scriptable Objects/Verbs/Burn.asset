@@ -16,5 +16,5 @@ MonoBehaviour:
   type: 0
   verbColour: Red
   description: Burn - Burns Objecs
-  verbWeigt: 6
+  verbWeigt: 1
   verbName: Burn

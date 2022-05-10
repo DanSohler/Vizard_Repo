@@ -16,5 +16,5 @@ MonoBehaviour:
   type: 2
   verbColour: Green
   description: Melt - Melts Objects
-  verbWeigt: 10
+  verbWeigt: 1
   verbName: Melt

@@ -7,8 +7,6 @@ public class SlotManager : MonoBehaviour
     public GameObject[] slotList;
     [SerializeField] private GameObject invScreen;
 
-    menuState currentState;
-
     private void Start()
     {
         //ensures each slot is closed on sta
@@ -18,10 +16,13 @@ public class SlotManager : MonoBehaviour
         }
     }
 
+    void grabSlotItemData()
+    {
+
+    }
 
     public void resetSlots()
     {
-        
             foreach (GameObject slotParent in slotList)
             {
                 if (slotParent.transform.childCount > 0)
@@ -29,12 +30,7 @@ public class SlotManager : MonoBehaviour
                 var child = slotParent.transform.GetChild(0);
                 child.SetParent(invScreen.transform);
                 slotParent.GetComponent<ItemSlot>().isHousingVerb = false;
+                }
             }
-                
-                // slotParent.transform.SetParent(invScreen.transform);
-            }
-            
     }
-
-
 }
