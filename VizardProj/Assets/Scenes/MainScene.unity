@@ -2295,7 +2295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1771890127
 Transform:
   m_ObjectHideFlags: 0
@@ -2384,18 +2384,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda93b311d19a94b8b027d9cd0f19aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotManScript: {fileID: 0}
-  wantedVerbName: 
+  slotManScript: {fileID: 1539642846}
+  wantedVerbName: Burn
   wantedVerbName1: 
   wantedVerbName2: 
   wantedVerbName3: 
   wantedVerbName4: 
-  wantedVerbColour: 
+  wantedVerbColour: Red
   wantedVerbColour1: 
   wantedVerbColour2: 
   wantedVerbColour3: 
   wantedVerbColour4: 
-  wantedVerbIntTotal: 0
+  wantedVerbIntTotal: 1
 --- !u!1 &1973119706
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        Time.timeScale = 1;
     }
 
     private void Update()
@@ -45,11 +44,10 @@ public class PlayerMovement : MonoBehaviour
         {
             MyInput();
             SpeedControl();
-            Time.timeScale = 1;
         }
         else
         {
-            Time.timeScale = 0;
+
         }
         rb.drag = groundDrag;
     }
