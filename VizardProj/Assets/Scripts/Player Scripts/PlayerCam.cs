@@ -21,6 +21,9 @@ public class PlayerCam : MonoBehaviour
     //references slot manager
     SlotManager slotManager;
 
+    //Refs pause icon
+    public GameObject pauseIcon;
+
 
     private void Start()
     {
@@ -29,6 +32,7 @@ public class PlayerCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        pauseIcon.SetActive(false);
         slotManager = FindObjectOfType<SlotManager>();
     }
 
@@ -91,6 +95,7 @@ public class PlayerCam : MonoBehaviour
             foreach (var obj in slotList)
             {
                 obj.SetActive(true);
+                pauseIcon.SetActive(true);
             }
         }
         if (currentState == menuState.menuDisabled)
@@ -99,6 +104,7 @@ public class PlayerCam : MonoBehaviour
             {
                 slotManager.resetSlots();
                 obj.SetActive(false);
+                pauseIcon.SetActive(false);
             }
         }
     }

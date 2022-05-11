@@ -73,7 +73,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //moves player every frame
-        MovePlayer();
+        if (camScript.currentState == menuState.menuDisabled)
+        {
+            MovePlayer();
+        }
     }
 
     void MyInput()
