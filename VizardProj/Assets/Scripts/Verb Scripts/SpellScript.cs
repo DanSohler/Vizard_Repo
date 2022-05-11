@@ -22,15 +22,26 @@ public class SpellScript : SpellManager
     // Int Verb Weight Holders
     public int wantedVerbIntTotal = 0;
 
+    [Header("Obj References")]
+    public PlayerCam playerCamScript;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            playerCamScript.inSpellArea = true;
             var corectSpell = SpellCombo();
-            if (corectSpell)
+            if (corectSpell && playerCamScript.castingSpell)
             {
                 Debug.Log("You did it!");
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            playerCamScript.inSpellArea = false;
         }
     }
 
@@ -60,7 +71,7 @@ public class SpellScript : SpellManager
                 }
             }
         }
-
+        //checks verb colours
         if (wantedVerbColour == spellVerbColour)
         {
             if (wantedVerbColour1 == spellVerbColour1)
@@ -78,7 +89,7 @@ public class SpellScript : SpellManager
                 }
             }
         }
-
+        //checks verb weight
         if (wantedVerbIntTotal == spellVerbIntTotal)
         {
             verbWeightCorrect = true;
@@ -94,6 +105,12 @@ public class SpellScript : SpellManager
         {
             return false;
         }
+    }
+
+    //can be set depending on its attache 
+    private void SpellEffect()
+    {
+
     }
 
 }
