@@ -24,6 +24,8 @@ public class SpellScript : SpellManager
 
     [Header("Obj References")]
     public PlayerCam playerCamScript;
+    public SpellTarget currentTarget;
+    public GameObject spellTargetObj;
 
     private void OnTriggerStay(Collider other)
     {
@@ -31,9 +33,12 @@ public class SpellScript : SpellManager
         {
             playerCamScript.inSpellArea = true;
             var corectSpell = SpellCombo();
-            if (corectSpell && playerCamScript.castingSpell)
+            if (corectSpell)
             {
-                Debug.Log("You did it!");
+                if (playerCamScript.castingSpell == true)
+                {
+                   // SpellEffect();
+                }
             }
         }
     }
@@ -53,23 +58,21 @@ public class SpellScript : SpellManager
 
         //stores everal if's, will be messy
         //checks verb names
-        if (wantedVerbName == spellVerbName)
-        {
-            Debug.Log("First Name is correct!");
-            if (wantedVerbName1 == spellVerbName1)
-            {
-                if (wantedVerbName2 == spellVerbName2)
-                {
-                    if (wantedVerbName3 == spellVerbName3)
-                    {
-                        if (wantedVerbName4 == spellVerbName4)
-                        {
-                            verbNamesCorrect = true;
-                            Debug.Log("All names correct!");
-                        }
-                    }
-                }
-            }
+        if (wantedVerbName.Equals(spellVerbName))
+           {
+            if (wantedVerbName1.Equals(spellVerbName1))
+               {
+                if (wantedVerbName2.Equals(spellVerbName2))
+                   {
+                       if (wantedVerbName3.Equals(spellVerbName3))
+                       {
+                           if (wantedVerbName4.Equals(spellVerbName4))
+                           {
+                               verbNamesCorrect = true;
+                           }
+                       }
+                   }
+               }
         }
         //checks verb colours
         if (wantedVerbColour == spellVerbColour)
@@ -83,7 +86,6 @@ public class SpellScript : SpellManager
                         if (wantedVerbColour4 == spellVerbColour4)
                         {
                             verbColourCorrect = true;
-                            Debug.Log("All colours correct!");
                         }
                     }
                 }
@@ -93,7 +95,7 @@ public class SpellScript : SpellManager
         if (wantedVerbIntTotal == spellVerbIntTotal)
         {
             verbWeightCorrect = true;
-            Debug.Log("All weights correct!");
+            //Debug.Log("All weights correct!");
         }
 
         //checks if each of the 3 variables are correct
@@ -106,11 +108,11 @@ public class SpellScript : SpellManager
             return false;
         }
     }
+}
 
-    //can be set depending on its attache 
-    private void SpellEffect()
-    {
-
-    }
-
+public enum SpellTarget
+{
+    enemy,
+    door,
+    chest,
 }

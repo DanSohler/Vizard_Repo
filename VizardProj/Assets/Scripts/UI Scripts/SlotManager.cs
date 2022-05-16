@@ -45,8 +45,16 @@ public class SlotManager : MonoBehaviour
         for (int i = 0; i < verbSlotNames.Length; ++i)
         {
             //sets vars from slotList vars
-            verbSlotNames[i]   = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbName;
+            verbSlotNames[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbName;
+            if (verbSlotNames[i] == null)
+            {
+                verbSlotNames[i] = "emp";
+            }
             verbSlotColours[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbColour;
+            if (verbSlotColours[i] == null)
+            {
+                verbSlotColours[i] = "emp";
+            }
             verbSlotWeights[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbWeight;
         }
     }

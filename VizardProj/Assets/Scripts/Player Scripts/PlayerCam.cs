@@ -81,9 +81,11 @@ public class PlayerCam : MonoBehaviour
                 if (inSpellArea)
                 {
                     castingSpell = true;
+                    Debug.Log("Spell was cast");
                 }
                 currentState = menuState.menuDisabled;
                 SlotManage();
+                castingSpell = false;
             }
             return;
         }
