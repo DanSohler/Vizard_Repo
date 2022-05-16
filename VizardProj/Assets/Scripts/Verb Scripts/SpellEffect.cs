@@ -8,6 +8,7 @@ public class SpellEffect : MonoBehaviour
     public SpellScript refSpellScript;
     [Header("Target References")]
     public Animator doorAnimator;
+    public Animator chestAnimator;
     public void SpellResult(SpellTarget spellTarget)
     {
         //Damages enemies
@@ -23,7 +24,7 @@ public class SpellEffect : MonoBehaviour
         //unlocks chests
         if (spellTarget == SpellTarget.chest)
         {
-
+            chestAnimator.SetTrigger("ChestTrigger");
         }
     }
 }
