@@ -81,11 +81,10 @@ public class PlayerCam : MonoBehaviour
                 if (inSpellArea)
                 {
                     castingSpell = true;
-                    Debug.Log("Spell was cast");
+                    StartCoroutine(DisableCasting());
                 }
                 currentState = menuState.menuDisabled;
                 SlotManage();
-                castingSpell = false;
             }
             return;
         }
@@ -108,7 +107,7 @@ public class PlayerCam : MonoBehaviour
         }
     }
 
-    private void SlotManage()
+    public void SlotManage()
     {
         if (currentState == menuState.menuEnabled)
         {
@@ -127,6 +126,11 @@ public class PlayerCam : MonoBehaviour
                 pauseIcon.SetActive(false);
             }
         }
+    }
+    public IEnumerator DisableCasting()
+    {
+        yield return new WaitForSeconds(0.1f);
+        castingSpell = false;
     }
 }
 

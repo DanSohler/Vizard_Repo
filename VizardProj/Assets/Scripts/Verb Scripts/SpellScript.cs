@@ -25,7 +25,7 @@ public class SpellScript : SpellManager
     [Header("Obj References")]
     public PlayerCam playerCamScript;
     public SpellTarget currentTarget;
-    public GameObject spellTargetObj;
+    public SpellEffect spellTargetObj;
 
     private void OnTriggerStay(Collider other)
     {
@@ -37,7 +37,11 @@ public class SpellScript : SpellManager
             {
                 if (playerCamScript.castingSpell == true)
                 {
-                   // SpellEffect();
+                    spellTargetObj.SpellResult(currentTarget);
+                    playerCamScript.SlotManage();
+                    playerCamScript.castingSpell = false;
+                    playerCamScript.inSpellArea = false;
+                    gameObject.SetActive(false);
                 }
             }
         }
