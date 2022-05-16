@@ -10,7 +10,7 @@ public class DisplayInventory : MonoBehaviour
 
     void start()
     {
-        CreatDisplay();
+        CreateDisplay();
     }
 
     private void Update()
@@ -18,14 +18,12 @@ public class DisplayInventory : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void CreatDisplay()
+    public void CreateDisplay()
     {
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             var obj = Instantiate(inventory.Container[i].verb.prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition();
-            //marked out since Numbers aren't needed
-            //obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             verbsDisplayed.Add(inventory.Container[i], obj);
         }
 
@@ -41,6 +39,7 @@ public class DisplayInventory : MonoBehaviour
             {
                 var obj = Instantiate(inventory.Container[i].verb.prefab, Vector3.zero, Quaternion.identity, transform);
                 //fills the collected obj with details from the prefab it spawned from
+                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].verb.name.ToString();
                 obj.GetComponent<VerbStats>().SetVerbStats(inventory.Container[i].verb.name, inventory.Container[i].verb.verbColour, inventory.Container[i].verb.verbWeigt);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition();
                 verbsDisplayed.Add(inventory.Container[i], obj);
