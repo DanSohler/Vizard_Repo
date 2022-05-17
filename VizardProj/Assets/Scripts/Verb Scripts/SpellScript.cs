@@ -26,6 +26,12 @@ public class SpellScript : SpellManager
     public PlayerCam playerCamScript;
     public SpellTarget currentTarget;
     public SpellEffect spellTargetObj;
+    public GameObject spellTickBox;
+
+    private void Start()
+    {
+        spellTickBox.SetActive(false);
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -35,12 +41,14 @@ public class SpellScript : SpellManager
             var corectSpell = SpellCombo();
             if (corectSpell)
             {
+                spellTickBox.SetActive(true);
                 if (playerCamScript.castingSpell == true)
                 {
                     spellTargetObj.SpellResult(currentTarget);
                     playerCamScript.SlotManage();
                     playerCamScript.castingSpell = false;
                     playerCamScript.inSpellArea = false;
+                    spellTickBox.SetActive(false);
                     gameObject.SetActive(false);
                 }
             }
