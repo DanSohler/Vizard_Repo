@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809ca7741b8d91544a6d448c5254a0e9, type: 3}
   m_Name: Perfectly
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1622080886866851836, guid: d58cab15bceb0334081941016008b7c0, type: 3}
   type: 3
   verbColour: AdVerb
-  description: 
-  verbWeigt: 0
+  description: Perfectly - To preform flawlessly
+  verbWeigt: 2
   verbName: 

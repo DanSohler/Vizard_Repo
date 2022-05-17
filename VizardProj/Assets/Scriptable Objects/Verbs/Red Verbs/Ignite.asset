@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f30f11189d77f564caf53b4a8b06c3d9, type: 3}
-  m_Name: New Red Verb Object
+  m_Name: Ignite
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 666570338522315561, guid: 67013754067b160438369390a2a63479, type: 3}
   type: 0
   verbColour: Red
-  description: 
-  verbWeigt: 0
+  description: Ignite - To set alight
+  verbWeigt: 1
   verbName: 

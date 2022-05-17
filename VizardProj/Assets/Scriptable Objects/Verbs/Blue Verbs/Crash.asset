@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66e8aecb26457794aadba937058fbb4d, type: 3}
-  m_Name: New Blue Verb Object
+  m_Name: Crash
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1659502670553409235, guid: 4c1a71bf63a9c034db8a8ee3d6c3a04d, type: 3}
   type: 1
   verbColour: Blue
-  description: 
-  verbWeigt: 0
+  description: Crash - To collide with great force
+  verbWeigt: 3
   verbName: 

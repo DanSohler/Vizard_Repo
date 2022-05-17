@@ -50,9 +50,17 @@ public class DisplayInventory : MonoBehaviour
         }
     }
 
+    public void GreyOutVerbs()
+    {
+
+    }
+
+
 
     public Vector3 GetPosition()
     {
         return new Vector3(0, 0, 0);
     }
 }
+
+
