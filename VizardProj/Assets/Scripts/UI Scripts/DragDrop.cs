@@ -32,10 +32,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     //Called when we begin dragging
     public void OnBeginDrag(PointerEventData eventData)
     {
-            orignialGrabbedObj = eventData.pointerCurrentRaycast.gameObject;
-            dragOriginPoint = rectTransform.anchoredPosition;
-            canvasGroup.alpha = 0.5f;
-            canvasGroup.blocksRaycasts = false;
+        orignialGrabbedObj = eventData.pointerCurrentRaycast.gameObject;
+        dragOriginPoint = rectTransform.anchoredPosition;
+        canvasGroup.alpha = 0.5f;
+        canvasGroup.blocksRaycasts = false;
         
     }
 
