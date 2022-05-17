@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class DisplayInventory : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class DisplayInventory : MonoBehaviour
         {
             var obj = Instantiate(inventory.Container[i].verb.prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition();
+
             verbsDisplayed.Add(inventory.Container[i], obj);
         }
 
@@ -46,6 +49,8 @@ public class DisplayInventory : MonoBehaviour
             }
         }
     }
+
+
     public Vector3 GetPosition()
     {
         return new Vector3(0, 0, 0);

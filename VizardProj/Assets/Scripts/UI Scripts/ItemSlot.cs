@@ -58,13 +58,16 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     //Call when we drop the item
     public void OnDrop(PointerEventData eventData)
     {
-        
         if (eventData.pointerDrag != null)
         {
             if (!isHousingVerb)
             {
                 var t = eventData.pointerDrag.transform;
                 t.SetParent(Instance.gameObject.transform);
+            }
+            else
+            {
+                var child = eventData.pointerDrag.transform;
             }
         }
     }

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IInitializePotentialDragHandler, IDragHandler
 {
     //stores obj for reset
-    GameObject grabbedObj;
+    GameObject orignialGrabbedObj;
     GameObject originInvParent;
 
     menuState currenState;
@@ -31,11 +32,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     //Called when we begin dragging
     public void OnBeginDrag(PointerEventData eventData)
     {
+            orignialGrabbedObj = eventData.pointerCurrentRaycast.gameObject;
+            dragOriginPoint = rectTransform.anchoredPosition;
+            canvasGroup.alpha = 0.5f;
+            canvasGroup.blocksRaycasts = false;
         
-        grabbedObj = eventData.pointerCurrentRaycast.gameObject;
-        dragOriginPoint = rectTransform.anchoredPosition;
-        canvasGroup.alpha = 0.5f;
-        canvasGroup.blocksRaycasts = false;
     }
 
     public void OnInitializePotentialDrag(PointerEventData eventData)
@@ -52,9 +53,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     //Called wgeb we end dragging
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1;
-        canvasGroup.blocksRaycasts = true;
-        rectTransform.anchoredPosition = dragOriginPoint;
+            canvasGroup.alpha = 1;
+            canvasGroup.blocksRaycasts = true;
+            rectTransform.anchoredPosition = dragOriginPoint;
+        
     }
 
     //Call when we click down
@@ -65,6 +67,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void ResetVerbObjPosition()
     {
-        grabbedObj.transform.SetParent(originInvParent.transform);
+        orignialGrabbedObj.transform.SetParent(originInvParent.transform);
     }
 }

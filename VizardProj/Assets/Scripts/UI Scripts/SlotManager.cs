@@ -33,7 +33,8 @@ public class SlotManager : MonoBehaviour
              if (slotParent.transform.childCount > 0)
              {
              var child = slotParent.transform.GetChild(0);
-             child.SetParent(invScreen.transform);
+             child.GetComponent<DragDrop>().ResetVerbObjPosition();
+             //child.SetParent(invScreen.transform);
              slotParent.GetComponent<ItemSlot>().isHousingVerb = false;
              }
          }
