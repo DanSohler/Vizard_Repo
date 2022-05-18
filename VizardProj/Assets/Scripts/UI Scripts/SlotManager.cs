@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlotManager : MonoBehaviour
 {
     public GameObject[] slotList;
-    [SerializeField] private GameObject invScreen;
+    public GameObject invScreen;
 
     // Series of lists containing values from each itemslot, might be messy
     public string[] verbSlotNames;
