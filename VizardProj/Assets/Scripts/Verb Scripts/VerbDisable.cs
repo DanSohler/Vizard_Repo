@@ -21,13 +21,11 @@ public class VerbDisable : MonoBehaviour
             var randomChild = Random.Range(0, maxChildCount);
 
             DisableVerbInInventory(slotManScript.invScreen.transform.GetChild(randomChild).gameObject);
-            Debug.Log("Disabled " + slotManScript.invScreen.transform.GetChild(randomChild).name);
         }
 
         if (Input.GetKeyUp(KeyCode.V))
         {
             ReenableVerbInInventory();
-            Debug.Log("Enabled all verbs");
         }
     }
 
