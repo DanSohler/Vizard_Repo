@@ -99,11 +99,13 @@ public class PlayerCam : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
+            slotManager.resetSlots();
         }
         if (currentState == menuState.menuDisabled)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            slotManager.resetSlots();
         }
     }
 

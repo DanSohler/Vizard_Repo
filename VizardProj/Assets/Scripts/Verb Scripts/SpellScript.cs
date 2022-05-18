@@ -26,11 +26,14 @@ public class SpellScript : SpellManager
     public PlayerCam playerCamScript;
     public SpellTarget currentTarget;
     public SpellEffect spellTargetObj;
+    // used to display if correct combo is present
     public GameObject spellTickBox;
+    private SlotManager SlotManScript;
 
     private void Start()
     {
         spellTickBox.SetActive(false);
+        SlotManScript = FindObjectOfType<SlotManager>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -46,19 +49,33 @@ public class SpellScript : SpellManager
                 {
                     spellTargetObj.SpellResult(currentTarget);
                     playerCamScript.SlotManage();
+
                     playerCamScript.castingSpell = false;
                     playerCamScript.inSpellArea = false;
+
                     spellTickBox.SetActive(false);
                     gameObject.SetActive(false);
+
+                    SlotManScript.resetSlots();
                 }
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            spellTickBox.SetActive(false);
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             playerCamScript.inSpellArea = false;
+            spellTickBox.SetActive(false);
         }
     }
 
