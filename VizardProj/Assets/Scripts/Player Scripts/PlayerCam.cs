@@ -60,17 +60,15 @@ public class PlayerCam : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            //flips bool to opposite of current state
-            stateRotator = !stateRotator;
-            if (stateRotator)
-            {
-                currentState = menuState.menuEnabled;
-                SlotManage();
-            }
-            if (!stateRotator)
+            //flips state to opposite of current state
+            if (currentState == menuState.menuEnabled)
             {
                 currentState = menuState.menuDisabled;
-                slotManager.ResetSlotValues();
+                SlotManage();
+            }
+            else
+            {
+                currentState = menuState.menuEnabled;
                 SlotManage();
             }
         }
@@ -100,13 +98,11 @@ public class PlayerCam : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
-            slotManager.SetVerbSlotValues();
         }
         if (currentState == menuState.menuDisabled)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            slotManager.ResetSlotValues();
             slotManager.ResetSlotChildren();
         }
     }

@@ -13,6 +13,14 @@ public class SlotManager : MonoBehaviour
     public string[] verbSlotColours;
     public int[] verbSlotWeights;
 
+    //ref to playercam states
+    PlayerCam camScript;
+
+    private void Awake()
+    {
+        camScript = FindObjectOfType<PlayerCam>();
+    }
+
     private void Start()
     {
         //ensures each slot is closed on start
@@ -25,6 +33,8 @@ public class SlotManager : MonoBehaviour
     public void Update()
     {
         SetVerbSlotValues();
+
+        Debug.Log("" + camScript.currentState);
     }
 
     public void ResetSlotChildren()
@@ -70,21 +80,49 @@ public class SlotManager : MonoBehaviour
 
     public void SetVerbSlotValues()
     {
-        // grab values of each itemslot, and send them to spell manager
-        for (int i = 0; i < verbSlotNames.Length; ++i)
+        if (camScript.currentState == menuState.menuEnabled)
         {
-            //sets vars from slotList vars
-            verbSlotNames[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbName;
-            if (verbSlotNames[i] == null)
+            // grab values of each itemslot, and send them to spell manager
+            for (int i = 0; i < verbSlotNames.Length; ++i)
             {
-                verbSlotNames[i] = "emp";
+                //sets vars from slotList vars
+                verbSlotNames[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbName;
+                if (verbSlotNames[i] == null)
+                {
+                    verbSlotNames[i] = "emp";
+                }
+                verbSlotColours[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbColour;
+                if (verbSlotColours[i] == null)
+                {
+                    verbSlotColours[i] = "emp";
+                }
+                verbSlotWeights[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbWeight;
             }
-            verbSlotColours[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbColour;
-            if (verbSlotColours[i] == null)
+            return;
+        }
+
+        if (camScript.currentState == menuState.menuDisabled)
+        {
+            // resets the values of each itemslot
+            for (int i = 0; i < verbSlotNames.Length; ++i)
             {
-                verbSlotColours[i] = "emp";
+                verbSlotNames[i] = null;
             }
-            verbSlotWeights[i] = slotList[i].gameObject.GetComponent<ItemSlot>().slotVerbWeight;
+            for (int i = 0; i < verbSlotColours.Length; ++i)
+            {
+                verbSlotColours[i] = null;
+            }
+            for (int i = 0; i < verbSlotWeights.Length; ++i)
+            {
+                verbSlotWeights[i] = 0;
+            }
         }
     }
+
+    public void ClearSlotData()
+    {
+
+    }
+
+
 }
