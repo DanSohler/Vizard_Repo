@@ -70,6 +70,7 @@ public class PlayerCam : MonoBehaviour
             if (!stateRotator)
             {
                 currentState = menuState.menuDisabled;
+                slotManager.ResetSlotValues();
                 SlotManage();
             }
         }
@@ -99,13 +100,14 @@ public class PlayerCam : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
-            slotManager.resetSlots();
+            slotManager.SetVerbSlotValues();
         }
         if (currentState == menuState.menuDisabled)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            slotManager.resetSlots();
+            slotManager.ResetSlotValues();
+            slotManager.ResetSlotChildren();
         }
     }
 
@@ -123,7 +125,7 @@ public class PlayerCam : MonoBehaviour
         {
             foreach (var obj in slotList)
             {
-                slotManager.resetSlots();
+                slotManager.ResetSlotChildren();
                 obj.SetActive(false);
                 pauseIcon.SetActive(false);
             }

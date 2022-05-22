@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,7 @@ public class SlotManager : MonoBehaviour
         SetVerbSlotValues();
     }
 
-    public void resetSlots()
+    public void ResetSlotChildren()
     {
          foreach (GameObject slotParent in slotList)
          {
@@ -38,6 +39,33 @@ public class SlotManager : MonoBehaviour
              slotParent.GetComponent<ItemSlot>().isHousingVerb = false;
              }
          }
+    }
+
+    public void ResetSlotValues()
+    {
+        //sets vars from slotList vars
+
+        // verbSlotNames[0] = null;
+        // verbSlotNames[1] = null;
+        // verbSlotNames[2] = null;
+        // verbSlotNames[3] = null;
+        // verbSlotNames[4] = null;
+
+        Array.Clear(verbSlotNames, 0, verbSlotNames.Length);
+
+        //verbSlotColours[0] = null;
+        //verbSlotColours[1] = null;
+        //verbSlotColours[2] = null;
+        //verbSlotColours[3] = null;
+        //verbSlotColours[4] = null;
+
+        //Resets vars from slotList vars
+
+        //verbSlotWeights[0] = 0;
+        //verbSlotWeights[1] = 0;
+        //verbSlotWeights[2] = 0;
+        //verbSlotWeights[3] = 0;
+        //verbSlotWeights[4] = 0;
     }
 
     public void SetVerbSlotValues()

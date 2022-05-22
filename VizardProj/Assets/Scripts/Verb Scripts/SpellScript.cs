@@ -56,7 +56,8 @@ public class SpellScript : SpellManager
                     spellTickBox.SetActive(false);
                     gameObject.SetActive(false);
 
-                    SlotManScript.resetSlots();
+                    SlotManScript.ResetSlotChildren();
+                    SlotManScript.ResetSlotValues();
                 }
             }
         }
