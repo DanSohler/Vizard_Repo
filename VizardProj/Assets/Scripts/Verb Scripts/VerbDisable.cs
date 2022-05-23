@@ -23,6 +23,11 @@ public class VerbDisable : MonoBehaviour
 
             randomChild = Random.Range(0, maxChildCount);
 
+            if (usedChildren.Count >= maxChildCount)
+            {
+                return;
+            }
+
             while (usedChildren.Contains(randomChild))
             {
                 randomChild = Random.Range(0, maxChildCount);
