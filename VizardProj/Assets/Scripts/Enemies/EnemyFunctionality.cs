@@ -8,13 +8,15 @@ public class EnemyFunctionality : SpellEffect
     private float currentHealth;
 
     [SerializeField] private EnemyHealth healthBar;
-    [SerializeField] Collider attackRange;
     [SerializeField] bool isAttacking = false;
     [SerializeField] PlayerCam playerCamScript;
     [SerializeField] VerbDisable disableScript;
 
+    private enemyState currentState;
+
     private void Start()
     {
+        currentState = enemyState.idle;
         currentHealth = maxHealth;
         playerCamScript = GetComponent<PlayerCam>();
 
@@ -34,10 +36,18 @@ public class EnemyFunctionality : SpellEffect
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            currentState = enemyState.attacking;
+        }
+    }
+
 
     public IEnumerator AttackPlayer()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2f);
         disableScript.DisableVerb();
     }
 
