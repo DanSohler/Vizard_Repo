@@ -51,7 +51,7 @@ public class SlotManager : MonoBehaviour
 
     public void SetVerbSlotValues()
     {
-        if (camScript.currentState == menuState.menuEnabled)
+        if (camScript.camCurrentState == menuState.menuEnabled)
         {
             // grab values of each itemslot, and send them to spell manager
             for (int i = 0; i < verbSlotNames.Length; ++i)
@@ -72,7 +72,7 @@ public class SlotManager : MonoBehaviour
             return;
         }
 
-        if (camScript.currentState == menuState.menuDisabled)
+        if (camScript.camCurrentState == menuState.menuDisabled)
         {
             // resets the values of each itemslot
             for (int i = 0; i < verbSlotNames.Length; ++i)

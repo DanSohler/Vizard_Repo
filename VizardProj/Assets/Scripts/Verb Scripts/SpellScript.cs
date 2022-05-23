@@ -65,7 +65,7 @@ public class SpellScript : SpellManager
             }
         }
 
-        if (playerCamScript.currentState == menuState.menuDisabled)
+        if (playerCamScript.camCurrentState == menuState.menuDisabled)
         {
             spellTickBox.SetActive(false);
         }

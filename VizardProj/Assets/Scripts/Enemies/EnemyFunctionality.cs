@@ -30,17 +30,28 @@ public class EnemyFunctionality : SpellEffect
             enemyAnimator.SetTrigger("EnemyTrigger");
         }
 
-        if (playerCamScript.currentState == menuState.menuEnabled)
+        if (currentState == enemyState.attacking)
         {
-            Debug.Log("Begin attack phase");
+
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            currentState = enemyState.attacking;
+            if (Cursor.lockState == CursorLockMode.None)
+            {
+                currentState = enemyState.attacking;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            currentState = enemyState.idle;
         }
     }
 

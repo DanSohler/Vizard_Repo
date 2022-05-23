@@ -561,7 +561,6 @@ Transform:
   - {fileID: 1539642845}
   - {fileID: 2126360913}
   - {fileID: 529123008}
-  - {fileID: 163389987}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -790,7 +789,7 @@ MonoBehaviour:
   sensX: 650
   sensY: 650
   orientation: {fileID: 2127973294}
-  currentState: 0
+  camCurrentState: 0
   stateRotator: 1
   slotList:
   - {fileID: 1037832510}
@@ -840,12 +839,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163389985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -1.75}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 139709579}
-  m_Father: {fileID: 109543067}
-  m_RootOrder: 4
+  m_Father: {fileID: 1165304450}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198723030
 GameObject:
@@ -1580,7 +1579,6 @@ MonoBehaviour:
   enemyAnimator: {fileID: 547315046}
   maxHealth: 1
   healthBar: {fileID: 388267433}
-  attackRange: {fileID: 0}
   isAttacking: 0
   playerCamScript: {fileID: 139709581}
   disableScript: {fileID: 529123009}
@@ -4567,7 +4565,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18762
+  m_Name: pb_Mesh19070
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5448,7 +5446,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1210
+  m_Name: pb_Mesh-1512
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9513,6 +9511,7 @@ Transform:
   - {fileID: 849993217}
   - {fileID: 2127973294}
   - {fileID: 37558883}
+  - {fileID: 163389987}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13390,7 +13389,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1226
+  m_Name: pb_Mesh-1528
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13789,7 +13788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1430795863779317908, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1430795863779317913, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: refSpellScript

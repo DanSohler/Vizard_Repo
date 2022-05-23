@@ -12,7 +12,7 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    public menuState currentState;
+    public menuState camCurrentState;
     [HideInInspector] public bool stateRotator = true;
 
     //Holds all slots
@@ -32,7 +32,7 @@ public class PlayerCam : MonoBehaviour
 
     private void Start()
     {
-        currentState = menuState.menuDisabled;
+        camCurrentState = menuState.menuDisabled;
         // locks cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -43,7 +43,7 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        if (currentState == menuState.menuDisabled)
+        if (camCurrentState == menuState.menuDisabled)
         {
             // gets mouse input
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
@@ -62,20 +62,20 @@ public class PlayerCam : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             //flips state to opposite of current state
-            if (currentState == menuState.menuEnabled)
+            if (camCurrentState == menuState.menuEnabled)
             {
-                currentState = menuState.menuDisabled;
+                camCurrentState = menuState.menuDisabled;
                 tickIcon.SetActive(false);
             }
             else
             {
-                currentState = menuState.menuEnabled;
+                camCurrentState = menuState.menuEnabled;
             }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (currentState == menuState.menuEnabled)
+            if (camCurrentState == menuState.menuEnabled)
             {
                 if (inSpellArea)
                 {
@@ -95,13 +95,13 @@ public class PlayerCam : MonoBehaviour
 
     private void OnAnimatorMove()
     {
-        if (currentState == menuState.menuEnabled)
+        if (camCurrentState == menuState.menuEnabled)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SlotManage();
         }
-        if (currentState == menuState.menuDisabled)
+        if (camCurrentState == menuState.menuDisabled)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -112,7 +112,7 @@ public class PlayerCam : MonoBehaviour
 
     public void SlotManage()
     {
-        if (currentState == menuState.menuEnabled)
+        if (camCurrentState == menuState.menuEnabled)
         {
             foreach (var obj in slotList)
             {
@@ -120,7 +120,7 @@ public class PlayerCam : MonoBehaviour
                 pauseIcon.SetActive(true);
             }
         }
-        if (currentState == menuState.menuDisabled)
+        if (camCurrentState == menuState.menuDisabled)
         {
             foreach (var obj in slotList)
             {
@@ -134,7 +134,7 @@ public class PlayerCam : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         castingSpell = false;
-        currentState = menuState.menuDisabled;
+        camCurrentState = menuState.menuDisabled;
     }
 }
 

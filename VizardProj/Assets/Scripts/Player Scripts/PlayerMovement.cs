@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //Updates scripts when state changes
-        if (camScript.currentState == menuState.menuDisabled)
+        if (camScript.camCurrentState == menuState.menuDisabled)
         {
             MyInput();
             SpeedControl();
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //moves player every frame
-        if (camScript.currentState == menuState.menuDisabled)
+        if (camScript.camCurrentState == menuState.menuDisabled)
         {
             MovePlayer();
         }
