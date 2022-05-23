@@ -28,12 +28,14 @@ public class SpellScript : SpellManager
     public SpellEffect spellTargetObj;
     // used to display if correct combo is present
     public GameObject spellTickBox;
-    private SlotManager SlotManScript;
+    public SlotManager SlotManScript;
+
 
     private void Start()
     {
         spellTickBox.SetActive(false);
         SlotManScript = FindObjectOfType<SlotManager>();
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -58,8 +60,14 @@ public class SpellScript : SpellManager
 
                     SlotManScript.ResetSlotChildren();
                     playerCamScript.SlotManage();
+                    return;
                 }
             }
+        }
+
+        if (playerCamScript.currentState == menuState.menuDisabled)
+        {
+            spellTickBox.SetActive(false);
         }
     }
 

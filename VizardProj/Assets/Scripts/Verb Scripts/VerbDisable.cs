@@ -19,27 +19,38 @@ public class VerbDisable : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.C))
         {
-            var maxChildCount = slotManScript.invScreen.transform.childCount;
-
-            randomChild = Random.Range(0, maxChildCount);
-
-            if (usedChildren.Count >= maxChildCount)
-            {
-                return;
-            }
-
-            while (usedChildren.Contains(randomChild))
-            {
-                randomChild = Random.Range(0, maxChildCount);
-            }
-            DisableVerbInInventory(slotManScript.invScreen.transform.GetChild(randomChild).gameObject);
-            usedChildren.Add(randomChild);
+            DisableVerb();
         }
 
         if (Input.GetKeyUp(KeyCode.V))
         {
-            ReenableVerbInInventory();
+            ReEnableVerb();
         }
+    }
+
+    public void DisableVerb()
+    {
+        var maxChildCount = slotManScript.invScreen.transform.childCount;
+
+        randomChild = Random.Range(0, maxChildCount);
+
+        if (usedChildren.Count >= maxChildCount)
+        {
+            return;
+        }
+
+        while (usedChildren.Contains(randomChild))
+        {
+            randomChild = Random.Range(0, maxChildCount);
+        }
+        DisableVerbInInventory(slotManScript.invScreen.transform.GetChild(randomChild).gameObject);
+        usedChildren.Add(randomChild);
+    }
+
+    public void ReEnableVerb()
+    {
+        ReenableVerbInInventory();
+        usedChildren.Clear();
     }
 
     public void DisableVerbInInventory(GameObject inventoryVerb)
@@ -56,7 +67,7 @@ public class VerbDisable : MonoBehaviour
         {
             slotManScript.invScreen.transform.GetChild(i).GetComponent<Image>().color = slotManScript.invScreen.transform.GetChild(i).GetComponent<VerbStats>().initialColour;
             slotManScript.invScreen.transform.GetChild(i).GetComponent<VerbStats>().isDisabled = false;
-            slotManScript.invScreen.transform.GetChild(i).GetComponent<Image>().raycastTarget = false;
+            slotManScript.invScreen.transform.GetChild(i).GetComponent<Image>().raycastTarget = true;
         }
     }
 }

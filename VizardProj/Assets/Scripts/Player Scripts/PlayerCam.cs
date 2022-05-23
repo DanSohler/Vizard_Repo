@@ -23,6 +23,7 @@ public class PlayerCam : MonoBehaviour
 
     //Refs pause icon
     public GameObject pauseIcon;
+    public GameObject tickIcon;
 
     //Bool for casting spell in area
     public bool inSpellArea = false;
@@ -64,6 +65,7 @@ public class PlayerCam : MonoBehaviour
             if (currentState == menuState.menuEnabled)
             {
                 currentState = menuState.menuDisabled;
+                tickIcon.SetActive(false);
             }
             else
             {
