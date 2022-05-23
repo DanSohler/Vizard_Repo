@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image healtbarSprite;
+    [SerializeField] private float reduceSpeed = 2f;
+    private float target = 1;
+    private Camera playerCam;
+
+    private void Start()
     {
-        
+        playerCam = Camera.main;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealthBar(float maxHealth, float currentHealth)
     {
-        
+        target = currentHealth / maxHealth;
     }
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.LookRotation(transform.position - playerCam.transform.position);
+        healtbarSprite.fillAmount = Mathf.MoveTowards(healtbarSprite.fillAmount, target, reduceSpeed * Time.deltaTime);
+    }
+
+
 }

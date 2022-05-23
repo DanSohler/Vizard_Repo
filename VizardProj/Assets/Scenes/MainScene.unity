@@ -1177,6 +1177,7 @@ GameObject:
   - component: {fileID: 388267432}
   - component: {fileID: 388267431}
   - component: {fileID: 388267430}
+  - component: {fileID: 388267433}
   m_Layer: 0
   m_Name: EnemyCanvas
   m_TagString: Untagged
@@ -1265,6 +1266,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &388267433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388267428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3240db26d0c4ee46ba1070ffce060ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healtbarSprite: {fileID: 1012856191}
+  reduceSpeed: 2
 --- !u!1 &408412829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,8 +1536,9 @@ GameObject:
   - component: {fileID: 547315045}
   - component: {fileID: 547315044}
   - component: {fileID: 547315043}
-  - component: {fileID: 547315042}
   - component: {fileID: 547315046}
+  - component: {fileID: 547315042}
+  - component: {fileID: 547315047}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1555,13 +1571,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 547315040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7d3782f079a0f4a82cd7306069135a, type: 3}
+  m_Script: {fileID: 11500000, guid: da73144b17e6d0545b4d1c2311ade321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   refSpellScript: {fileID: 895610502}
   doorAnimator: {fileID: 0}
   chestAnimator: {fileID: 0}
   enemyAnimator: {fileID: 547315046}
+  maxHealth: 1
+  healthBar: {fileID: 388267433}
+  attackRange: {fileID: 0}
+  isAttacking: 0
+  playerCamScript: {fileID: 139709581}
+  disableScript: {fileID: 529123009}
 --- !u!136 &547315043
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1644,6 +1666,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &547315047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547315040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8, z: 8}
+  m_Center: {x: -0.03, y: 0, z: -0.13}
 --- !u!1 &566510994
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,7 +4901,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57518
+  m_Name: pb_Mesh18938
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5118,7 +5153,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57278
+  m_Name: pb_Mesh-1258
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5413,7 +5448,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57306
+  m_Name: pb_Mesh-1210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5617,7 +5652,7 @@ MonoBehaviour:
   wantedVerbIntTotal: 2
   playerCamScript: {fileID: 139709581}
   currentTarget: 0
-  spellTargetObj: {fileID: 547315042}
+  spellTargetObj: {fileID: 0}
   spellTickBox: {fileID: 1682472363}
   SlotManScript: {fileID: 0}
 --- !u!65 &895610503
@@ -5811,7 +5846,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57542
+  m_Name: pb_Mesh-1242
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6134,7 +6169,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57466
+  m_Name: pb_Mesh18898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13355,7 +13390,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57502
+  m_Name: pb_Mesh-1226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13751,6 +13786,10 @@ PrefabInstance:
     - target: {fileID: 1430795863779317908, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430795863779317908, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1430795863779317913, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: refSpellScript
