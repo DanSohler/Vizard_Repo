@@ -9,12 +9,13 @@ public class SpellEffect : MonoBehaviour
     [Header("Target References")]
     public Animator doorAnimator;
     public Animator chestAnimator;
+    public Animator enemyAnimator;
     public void SpellResult(SpellTarget spellTarget)
     {
         //Damages enemies
         if (spellTarget == SpellTarget.enemy)
         {
-            //reference enemy damage
+            enemyAnimator.SetTrigger("EnemyTrigger");
         }
         //Opens doors
         if (spellTarget == SpellTarget.door)

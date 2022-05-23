@@ -7,6 +7,9 @@ public class VerbDisable : MonoBehaviour
 {
     public SlotManager slotManScript;
 
+    public int randomChild = 0;
+    List<int> usedChildren = new List<int> ();
+
     private void Awake()
     {
         slotManScript = FindObjectOfType<SlotManager>();
@@ -18,9 +21,14 @@ public class VerbDisable : MonoBehaviour
         {
             var maxChildCount = slotManScript.invScreen.transform.childCount;
 
-            var randomChild = Random.Range(0, maxChildCount);
+            randomChild = Random.Range(0, maxChildCount);
 
+            while (usedChildren.Contains(randomChild))
+            {
+                randomChild = Random.Range(0, maxChildCount);
+            }
             DisableVerbInInventory(slotManScript.invScreen.transform.GetChild(randomChild).gameObject);
+            usedChildren.Add(randomChild);
         }
 
         if (Input.GetKeyUp(KeyCode.V))
@@ -32,6 +40,7 @@ public class VerbDisable : MonoBehaviour
     public void DisableVerbInInventory(GameObject inventoryVerb)
     {
         inventoryVerb.GetComponent<Image>().color = Color.grey;
+        inventoryVerb.GetComponent<VerbStats>().isDisabled = true;
         inventoryVerb.GetComponent<Image>().raycastTarget = false;
     }
 
@@ -41,6 +50,7 @@ public class VerbDisable : MonoBehaviour
         for (int i = 0; i < children; ++i)
         {
             slotManScript.invScreen.transform.GetChild(i).GetComponent<Image>().color = slotManScript.invScreen.transform.GetChild(i).GetComponent<VerbStats>().initialColour;
+            slotManScript.invScreen.transform.GetChild(i).GetComponent<VerbStats>().isDisabled = false;
             slotManScript.invScreen.transform.GetChild(i).GetComponent<Image>().raycastTarget = false;
         }
     }

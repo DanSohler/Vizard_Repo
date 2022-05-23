@@ -8,6 +8,7 @@ public class VerbStats : MonoBehaviour
     public string verbName;
     public string verbColour;
     public int verbWeight;
+    public bool isDisabled = false;
 
     [HideInInspector]public Color initialColour;
 

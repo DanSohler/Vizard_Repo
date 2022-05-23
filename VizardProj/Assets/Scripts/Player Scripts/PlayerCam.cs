@@ -95,7 +95,7 @@ public class PlayerCam : MonoBehaviour
     {
         if (currentState == menuState.menuEnabled)
         {
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SlotManage();
         }
