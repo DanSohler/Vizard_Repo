@@ -10,6 +10,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     GameObject orignialGrabbedObj;
     GameObject originInvParent;
 
+    menuState currentState;
+
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -32,6 +34,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         orignialGrabbedObj = eventData.pointerCurrentRaycast.gameObject;
         dragOriginPoint = rectTransform.anchoredPosition;
+
         canvasGroup.alpha = 0.5f;
         canvasGroup.blocksRaycasts = false;
         
