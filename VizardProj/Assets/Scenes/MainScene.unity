@@ -349,6 +349,7 @@ MonoBehaviour:
   currentTarget: 2
   spellTargetObj: {fileID: 1267830829}
   spellTickBox: {fileID: 1682472363}
+  SlotManScript: {fileID: 0}
 --- !u!65 &96037857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -797,6 +798,7 @@ MonoBehaviour:
   - {fileID: 1169874210}
   - {fileID: 97913378}
   pauseIcon: {fileID: 278635024}
+  tickIcon: {fileID: 1682472363}
   inSpellArea: 0
   castingSpell: 0
 --- !u!1 &163389985
@@ -5616,6 +5618,7 @@ MonoBehaviour:
   currentTarget: 0
   spellTargetObj: {fileID: 547315042}
   spellTickBox: {fileID: 1682472363}
+  SlotManScript: {fileID: 0}
 --- !u!65 &895610503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13345,6 +13348,7 @@ MonoBehaviour:
   currentTarget: 1
   spellTargetObj: {fileID: 754125034}
   spellTickBox: {fileID: 1682472363}
+  SlotManScript: {fileID: 0}
 --- !u!43 &1902619671
 Mesh:
   m_ObjectHideFlags: 0

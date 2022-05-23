@@ -15,19 +15,6 @@ public class VerbDisable : MonoBehaviour
         slotManScript = FindObjectOfType<SlotManager>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.C))
-        {
-            DisableVerb();
-        }
-
-        if (Input.GetKeyUp(KeyCode.V))
-        {
-            ReEnableVerb();
-        }
-    }
-
     public void DisableVerb()
     {
         var maxChildCount = slotManScript.invScreen.transform.childCount;
