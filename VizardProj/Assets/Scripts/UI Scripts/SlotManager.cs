@@ -33,8 +33,6 @@ public class SlotManager : MonoBehaviour
     public void Update()
     {
         SetVerbSlotValues();
-
-        Debug.Log("" + camScript.currentState);
     }
 
     public void ResetSlotChildren()
@@ -43,39 +41,12 @@ public class SlotManager : MonoBehaviour
          {
              if (slotParent.transform.childCount > 0)
              {
-             var child = slotParent.transform.GetChild(0);
-             child.GetComponent<DragDrop>().ResetVerbObjPosition();
-             //child.SetParent(invScreen.transform);
-             slotParent.GetComponent<ItemSlot>().isHousingVerb = false;
+                var child = slotParent.transform.GetChild(0);
+                child.GetComponent<DragDrop>().ResetVerbObjPosition();
+                 //child.SetParent(invScreen.transform);
+                slotParent.GetComponent<ItemSlot>().isHousingVerb = false;
              }
          }
-    }
-
-    public void ResetSlotValues()
-    {
-        //sets vars from slotList vars
-
-        // verbSlotNames[0] = null;
-        // verbSlotNames[1] = null;
-        // verbSlotNames[2] = null;
-        // verbSlotNames[3] = null;
-        // verbSlotNames[4] = null;
-
-        Array.Clear(verbSlotNames, 0, verbSlotNames.Length);
-
-        //verbSlotColours[0] = null;
-        //verbSlotColours[1] = null;
-        //verbSlotColours[2] = null;
-        //verbSlotColours[3] = null;
-        //verbSlotColours[4] = null;
-
-        //Resets vars from slotList vars
-
-        //verbSlotWeights[0] = 0;
-        //verbSlotWeights[1] = 0;
-        //verbSlotWeights[2] = 0;
-        //verbSlotWeights[3] = 0;
-        //verbSlotWeights[4] = 0;
     }
 
     public void SetVerbSlotValues()
@@ -118,11 +89,4 @@ public class SlotManager : MonoBehaviour
             }
         }
     }
-
-    public void ClearSlotData()
-    {
-
-    }
-
-
 }

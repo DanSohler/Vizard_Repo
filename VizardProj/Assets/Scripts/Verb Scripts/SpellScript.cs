@@ -47,16 +47,17 @@ public class SpellScript : SpellManager
                 spellTickBox.SetActive(true);
                 if (playerCamScript.castingSpell == true)
                 {
+                    Debug.Log("Spell is cast");
                     spellTargetObj.SpellResult(currentTarget);
-                    playerCamScript.SlotManage();
 
-                    playerCamScript.castingSpell = false;
                     playerCamScript.inSpellArea = false;
+                    playerCamScript.castingSpell = false;
 
                     spellTickBox.SetActive(false);
                     gameObject.SetActive(false);
 
                     SlotManScript.ResetSlotChildren();
+                    playerCamScript.SlotManage();
                 }
             }
         }
