@@ -24,6 +24,12 @@ public class EnemyHealth : MonoBehaviour
     {
         transform.rotation = Quaternion.LookRotation(transform.position - playerCam.transform.position);
         healtbarSprite.fillAmount = Mathf.MoveTowards(healtbarSprite.fillAmount, target, reduceSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            target = target - 0.25f;
+        }
+
     }
 
 

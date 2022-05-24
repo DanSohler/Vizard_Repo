@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFunctionality : SpellEffect
 {
-    [SerializeField] private float maxHealth = 1;
+    [SerializeField] private float maxHealth = 3;
     private float currentHealth;
 
     [SerializeField] private EnemyHealth healthBar;
@@ -19,6 +19,7 @@ public class EnemyFunctionality : SpellEffect
         currentState = enemyState.idle;
         currentHealth = maxHealth;
         playerCamScript = GetComponent<PlayerCam>();
+        disableScript = GetComponent<VerbDisable>();
 
         healthBar.UpdateHealthBar(maxHealth, currentHealth);
     }
@@ -34,6 +35,15 @@ public class EnemyFunctionality : SpellEffect
         {
 
         }
+
+        healthBar.UpdateHealthBar(maxHealth, currentHealth);
+
+        // Debug.Log("1231");
+    }
+
+    public void DamageEnemy(float damage)
+    {
+        currentHealth -= damage;
     }
 
     private void OnTriggerStay(Collider other)

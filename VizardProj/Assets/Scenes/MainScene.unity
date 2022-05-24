@@ -246,8 +246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 469.99973, y: 199.95679}
-  m_SizeDelta: {x: 900.0427, y: 359.9236}
+  m_AnchoredPosition: {x: 454.92313, y: 184.70801}
+  m_SizeDelta: {x: 870, y: 331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &79062680
 MonoBehaviour:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0624182ad620be44a8634a1a61bb402a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b398bcc0453367647871a461cf09c1ee, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1574,9 +1574,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refSpellScript: {fileID: 895610502}
+  refSpellScriptVolume: {fileID: 895610501}
   doorAnimator: {fileID: 0}
   chestAnimator: {fileID: 0}
   enemyAnimator: {fileID: 547315046}
+  enemyDamage: 0.5
+  enemyScript: {fileID: 547315042}
   maxHealth: 1
   healthBar: {fileID: 388267433}
   isAttacking: 0
@@ -4565,7 +4568,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19070
+  m_Name: pb_Mesh18786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4899,7 +4902,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18938
+  m_Name: pb_Mesh18962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5115,7 +5118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2079c1dc8a3b6524da87cf29a7b11d03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b3bc5a649f9cdf499b4b9682215aefb, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5151,7 +5154,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1258
+  m_Name: pb_Mesh-1276
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5446,7 +5449,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1512
+  m_Name: pb_Mesh-1228
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5650,9 +5653,9 @@ MonoBehaviour:
   wantedVerbIntTotal: 2
   playerCamScript: {fileID: 139709581}
   currentTarget: 0
-  spellTargetObj: {fileID: 0}
+  spellTargetObj: {fileID: 547315042}
   spellTickBox: {fileID: 1682472363}
-  SlotManScript: {fileID: 0}
+  SlotManScript: {fileID: 1539642846}
 --- !u!65 &895610503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5844,7 +5847,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1242
+  m_Name: pb_Mesh-1260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6167,7 +6170,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18898
+  m_Name: pb_Mesh18922
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13139,7 +13142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1682472364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13156,8 +13159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 864, y: 400}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 858.9133, y: 414.05}
+  m_SizeDelta: {x: 110.1733, y: 128.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682472365
 MonoBehaviour:
@@ -13172,15 +13175,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40826815, g: 1, b: 0.35294116, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 551d32623bc39474db71da039c4e978c, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13188,7 +13191,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.2
 --- !u!222 &1682472366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13389,7 +13392,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1528
+  m_Name: pb_Mesh-1244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13788,12 +13791,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1430795863779317908, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1430795863779317913, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: refSpellScript
       value: 
       objectReference: {fileID: 1771890131}
+    - target: {fileID: 1430795863779317913, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
+      propertyPath: refSpellScriptVolume
+      value: 
+      objectReference: {fileID: 1771890126}
     - target: {fileID: 1430795863779317915, guid: a19a3e4135425784eaccb9e76383871d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13935,5 +13942,9 @@ PrefabInstance:
       propertyPath: refSpellScript
       value: 
       objectReference: {fileID: 96037856}
+    - target: {fileID: 5033397771631435719, guid: 26678881abc53b04fb0bfca35856eeb3, type: 3}
+      propertyPath: refSpellScriptVolume
+      value: 
+      objectReference: {fileID: 96037854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26678881abc53b04fb0bfca35856eeb3, type: 3}

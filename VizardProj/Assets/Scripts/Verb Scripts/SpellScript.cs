@@ -56,7 +56,6 @@ public class SpellScript : SpellManager
                     playerCamScript.castingSpell = false;
 
                     spellTickBox.SetActive(false);
-                    gameObject.SetActive(false);
 
                     SlotManScript.ResetSlotChildren();
                     playerCamScript.SlotManage();
