@@ -13,7 +13,7 @@ public class EnemyFunctionality : SpellEffect
 
     private enemyState currentState;
 
-    private void Start()
+    public void Awake()
     {
         currentState = enemyState.idle;
         currentHealth = maxHealth;
