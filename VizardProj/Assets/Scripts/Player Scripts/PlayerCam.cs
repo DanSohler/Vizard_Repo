@@ -21,9 +21,12 @@ public class PlayerCam : MonoBehaviour
     //references slot manager
     SlotManager slotManager;
 
-    //Refs pause icon
+    //Refs UI items
     public GameObject pauseIcon;
     public GameObject tickIcon;
+    public GameObject inventoryBorder;
+    public GameObject inventoryScreen;
+
 
     //Bool for casting spell in area
     public bool inSpellArea = false;
@@ -61,16 +64,7 @@ public class PlayerCam : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            //flips state to opposite of current state
-            if (camCurrentState == menuState.menuEnabled)
-            {
-                camCurrentState = menuState.menuDisabled;
-                tickIcon.SetActive(false);
-            }
-            else
-            {
-                camCurrentState = menuState.menuEnabled;
-            }
+            ChangeMenuState();
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -82,15 +76,26 @@ public class PlayerCam : MonoBehaviour
                     castingSpell = true;
                     StartCoroutine(DisableCasting());
                 }
-
-                //SlotManage();
-                //
             }
             return;
         }
 
         //sets menu state
         OnAnimatorMove();
+    }
+
+    public void ChangeMenuState()
+    {
+        //flips state to opposite of current state
+        if (camCurrentState == menuState.menuEnabled)
+        {
+            camCurrentState = menuState.menuDisabled;
+            tickIcon.SetActive(false);
+        }
+        else
+        {
+            camCurrentState = menuState.menuEnabled;
+        }
     }
 
     private void OnAnimatorMove()
@@ -118,6 +123,8 @@ public class PlayerCam : MonoBehaviour
             {
                 obj.SetActive(true);
                 pauseIcon.SetActive(true);
+                inventoryBorder.SetActive(true);
+                inventoryScreen.SetActive(true);
             }
         }
         if (camCurrentState == menuState.menuDisabled)
@@ -127,6 +134,8 @@ public class PlayerCam : MonoBehaviour
                 obj.SetActive(false);
                 pauseIcon.SetActive(false);
                 slotManager.ResetSlotChildren();
+                inventoryBorder.SetActive(false);
+                inventoryScreen.SetActive(false);
             }
         }
     }
