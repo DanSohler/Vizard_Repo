@@ -29,6 +29,8 @@ public class EnemyFunctionality : SpellEffect
         if (currentHealth <= 0)
         {
             enemyAnimator.SetTrigger("EnemyTrigger");
+            refSpellScriptVolume.SetActive(false);
+            doorAnimator.SetTrigger("DoorTrigger");
         }
 
         if (currentState == enemyState.attacking)
