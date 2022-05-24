@@ -15,6 +15,9 @@ public class PlayerCam : MonoBehaviour
     public menuState camCurrentState;
     [HideInInspector] public bool stateRotator = true;
 
+    //Player Health
+    public int playerHealth = 3;
+
     //Holds all slots
     public List<GameObject> slotList;
 
@@ -46,6 +49,13 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
+        if (playerHealth <= 0)
+        {
+            //send player to start position.
+            Debug.Log("Player is defeated");
+        }
+
+
         if (camCurrentState == menuState.menuDisabled)
         {
             // gets mouse input
@@ -96,6 +106,16 @@ public class PlayerCam : MonoBehaviour
         {
             camCurrentState = menuState.menuEnabled;
         }
+    }
+
+    public void DamagePlayer()
+    {
+        playerHealth = playerHealth - 1;
+    }
+
+    public void HealPlayer()
+    {
+        playerHealth = 3;
     }
 
     private void OnAnimatorMove()

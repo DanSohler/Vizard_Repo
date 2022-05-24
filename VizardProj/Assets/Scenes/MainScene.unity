@@ -1065,6 +1065,7 @@ MonoBehaviour:
   orientation: {fileID: 2127973294}
   camCurrentState: 0
   stateRotator: 1
+  playerHealth: 3
   slotList:
   - {fileID: 1037832510}
   - {fileID: 472513034}
@@ -1287,7 +1288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &278635025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28934,6 +28935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5369920406303112607, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
+      propertyPath: camScript
+      value: 
+      objectReference: {fileID: 139709581}
     - target: {fileID: 5369920406303112607, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
       propertyPath: enemyDamage
       value: 1

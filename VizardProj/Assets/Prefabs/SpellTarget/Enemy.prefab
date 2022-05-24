@@ -291,11 +291,10 @@ MonoBehaviour:
   doorAnimator: {fileID: 0}
   chestAnimator: {fileID: 0}
   enemyAnimator: {fileID: 5369920406303112603}
-  enemyDamage: 0.5
+  enemyDamage: 1
   enemyScript: {fileID: 5369920406303112607}
   maxHealth: 1
   healthBar: {fileID: 5369920406648675668}
-  isAttacking: 0
   playerCamScript: {fileID: 0}
   disableScript: {fileID: 0}
 --- !u!65 &5369920406303112602

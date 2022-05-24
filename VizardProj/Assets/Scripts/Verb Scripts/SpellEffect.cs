@@ -13,7 +13,7 @@ public class SpellEffect : MonoBehaviour
     public Animator enemyAnimator;
     [Header("Enemy References")]
     [SerializeField] private float enemyDamage = 1;
-    [SerializeField] private EnemyFunctionality enemyScript;
+    public EnemyFunctionality enemyScript;
     public void SpellResult(SpellTarget spellTarget)
     {
         //Damages enemies

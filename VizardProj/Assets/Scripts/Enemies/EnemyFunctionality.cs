@@ -8,8 +8,7 @@ public class EnemyFunctionality : SpellEffect
     private float currentHealth;
 
     [SerializeField] private EnemyHealth healthBar;
-    [SerializeField] bool isAttacking = false;
-    [SerializeField] PlayerCam playerCamScript;
+    public PlayerCam playerCamScript;
     [SerializeField] VerbDisable disableScript;
 
     private enemyState currentState;
@@ -35,7 +34,8 @@ public class EnemyFunctionality : SpellEffect
 
         if (currentState == enemyState.attacking)
         {
-
+            playerCamScript.DamagePlayer();
+            //StartCoroutine(AttackPlayer());
         }
 
         healthBar.UpdateHealthBar(maxHealth, currentHealth);
@@ -64,14 +64,15 @@ public class EnemyFunctionality : SpellEffect
         if (other.gameObject.tag == "Player")
         {
             currentState = enemyState.idle;
+            StopCoroutine(AttackPlayer());
         }
     }
 
 
     public IEnumerator AttackPlayer()
     {
-        yield return new WaitForSeconds(2f);
-        disableScript.DisableVerb();
+        Debug.Log("Attacking Player");
+        yield return new WaitForSeconds(3f);
     }
 
 }
