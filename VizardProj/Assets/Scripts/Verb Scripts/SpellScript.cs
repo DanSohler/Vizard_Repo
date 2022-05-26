@@ -75,6 +75,7 @@ public class SpellScript : SpellManager
         if (other.gameObject.tag == "Player")
         {
             spellTickBox.SetActive(false);
+            SlotManScript.SetVerbSlotValues();
         }
     }
 
@@ -84,6 +85,7 @@ public class SpellScript : SpellManager
         {
             playerCamScript.inSpellArea = false;
             spellTickBox.SetActive(false);
+            SlotManScript.SetVerbSlotValues();
         }
     }
 

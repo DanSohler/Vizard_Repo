@@ -141,6 +141,7 @@ public class PlayerCam : MonoBehaviour
         {
             foreach (var obj in slotList)
             {
+                slotManager.SetVerbSlotValues();
                 obj.SetActive(true);
                 pauseIcon.SetActive(true);
                 inventoryBorder.SetActive(true);
