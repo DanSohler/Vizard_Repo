@@ -8,7 +8,7 @@ public class EnemyFunctionality : SpellEffect
     private float currentHealth;
 
     [SerializeField] private EnemyHealth healthBar;
-    public PlayerCam playerCamScript;
+    [SerializeField] PlayerCam playerCamScript;
     [SerializeField] VerbDisable disableScript;
 
     private enemyState currentState;
