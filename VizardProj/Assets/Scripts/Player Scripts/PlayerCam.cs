@@ -29,6 +29,7 @@ public class PlayerCam : MonoBehaviour
     public GameObject tickIcon;
     public GameObject inventoryBorder;
     public GameObject inventoryScreen;
+    public GameObject quitButton;
 
 
     //Bool for casting spell in area
@@ -90,6 +91,11 @@ public class PlayerCam : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown("escape"))
+        {
+            Debug.Log("Open quit menu here");
+        }
+
         //sets menu state
         OnAnimatorMove();
     }
@@ -146,6 +152,7 @@ public class PlayerCam : MonoBehaviour
                 pauseIcon.SetActive(true);
                 inventoryBorder.SetActive(true);
                 inventoryScreen.SetActive(true);
+                quitButton.SetActive(true);
             }
         }
         if (camCurrentState == menuState.menuDisabled)
@@ -157,6 +164,7 @@ public class PlayerCam : MonoBehaviour
                 slotManager.ResetSlotChildren();
                 inventoryBorder.SetActive(false);
                 inventoryScreen.SetActive(false);
+                quitButton.SetActive(false);
             }
         }
     }
