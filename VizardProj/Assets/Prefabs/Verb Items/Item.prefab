@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 42a362a170ea89744987b812174f15a5, type: 2}
+  m_sharedMaterial: {fileID: 1647994455220519968, guid: 42a362a170ea89744987b812174f15a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -228,6 +228,8 @@ MonoBehaviour:
   verbName: 
   verbColour: 
   verbWeight: 0
+  isDisabled: 0
+  initialColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3405906801134895909
 MonoBehaviour:
   m_ObjectHideFlags: 0
