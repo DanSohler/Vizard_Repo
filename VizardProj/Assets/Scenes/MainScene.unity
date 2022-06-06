@@ -6081,6 +6081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983342995}
     m_Modifications:
+    - target: {fileID: 5369920406303112601, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5369920406303112604, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -6145,10 +6149,18 @@ PrefabInstance:
       propertyPath: refSpellScriptVolume
       value: 
       objectReference: {fileID: 837036956}
+    - target: {fileID: 5369920406307953728, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5369920406307953731, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e1a01a9b9780921468e177cf2c2099a6, type: 2}
+    - target: {fileID: 7302283950329170658, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7321223989121074947, guid: 4511d85124a1ef64cb1e621f6f044283, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -15436,7 +15448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This looks as if it could be split in two
+  m_text: This lock could be cracked quickly with little noise
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42a362a170ea89744987b812174f15a5, type: 2}
   m_sharedMaterial: {fileID: 1647994455220519968, guid: 42a362a170ea89744987b812174f15a5, type: 2}
@@ -15463,7 +15475,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.2
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -54078,10 +54090,10 @@ MonoBehaviour:
   wantedVerbColour2: emp
   wantedVerbColour3: emp
   wantedVerbColour4: emp
-  wantedVerbIntTotal: 1
+  wantedVerbIntTotal: 5
   playerCamScript: {fileID: 139709581}
   currentTarget: 1
-  spellTargetObj: {fileID: 754125034}
+  spellTargetObj: {fileID: 2128041965}
   spellTickBox: {fileID: 1682472363}
   SlotManScript: {fileID: 0}
 --- !u!65 &1029242155
@@ -68916,7 +68928,7 @@ BoxCollider:
   m_GameObject: {fileID: 1268521735}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -101322,6 +101334,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5779136609628232606, guid: 1876e46cbb49f5a42b5f784d0686556c, type: 3}
   m_PrefabInstance: {fileID: 955271474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128041965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5779136609628232604, guid: 1876e46cbb49f5a42b5f784d0686556c, type: 3}
+  m_PrefabInstance: {fileID: 955271474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7d3782f079a0f4a82cd7306069135a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2141581800
 GameObject:
   m_ObjectHideFlags: 0
