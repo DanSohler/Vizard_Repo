@@ -143,18 +143,16 @@ public class PlayerCam : MonoBehaviour
 
     public void SlotManage()
     {
-        if (camCurrentState == menuState.menuEnabled)
+       // old way of enabling slots
+        foreach (var obj in slotList)
         {
-            foreach (var obj in slotList)
-            {
-                slotManager.SetVerbSlotValues();
-                obj.SetActive(true);
-                pauseIcon.SetActive(true);
-                inventoryBorder.SetActive(true);
-                inventoryScreen.SetActive(true);
-                quitButton.SetActive(true);
-            }
-        }
+            slotManager.SetVerbSlotValues();
+            obj.SetActive(true);
+            pauseIcon.SetActive(true);
+            inventoryBorder.SetActive(true);
+            inventoryScreen.SetActive(true);
+            quitButton.SetActive(true);
+        } 
         if (camCurrentState == menuState.menuDisabled)
         {
             foreach (var obj in slotList)
@@ -175,6 +173,7 @@ public class PlayerCam : MonoBehaviour
         camCurrentState = menuState.menuDisabled;
     }
 }
+
 
 public enum menuState
 {

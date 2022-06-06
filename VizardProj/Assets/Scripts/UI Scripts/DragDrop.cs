@@ -10,7 +10,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     GameObject orignialGrabbedObj;
     GameObject originInvParent;
 
-    menuState currentState;
+    public menuState currentState;
 
     private Canvas canvas;
     private RectTransform rectTransform;
